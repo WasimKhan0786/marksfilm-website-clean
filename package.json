@@ -2,38 +2,45 @@
   "name": "marksfilm-complete-system",
   "version": "2.0.0",
   "description": "Complete Business Management System for MarksFilm - Professional Videography & Photography",
-  "main": "index.html",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node start-server.js",
-    "backend": "cd backend && node server.js",
-    "init-db": "cd backend && node scripts/init-database.js",
-    "production": "cd backend && npm start"
+    "start": "node api/index.js",
+    "build": "echo 'Build complete'",
+    "dev": "node backend/server.js"
   },
   "keywords": [
     "videography",
     "photography",
     "wedding",
     "business-management",
-    "crm",
-    "inventory",
-    "accounting",
     "booking-system"
   ],
   "author": "MarksFilm",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marksfilm/complete-system"
+    "url": "https://github.com/WasimKhan0786/marksfilm-website-clean"
   },
   "engines": {
     "node": "22.x"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "compression": "^1.8.1",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^4.21.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.1.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.3.0",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.0-rc.4",
     "nodemailer": "^7.0.10",
-    "open": "^8.4.2",
-    "razorpay": "^2.9.6"
+    "razorpay": "^2.9.6",
+    "resend": "^6.3.0",
+    "sqlite3": "^5.1.6"
   }
 }

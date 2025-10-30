@@ -27,9 +27,6 @@ const {
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Vercel serverless function export
-module.exports = app;
-
 // 🛡️ SECURITY MIDDLEWARE (Applied in correct order)
 console.log('🔒 Initializing security middleware...');
 
@@ -270,26 +267,31 @@ app.use('*', (req, res) => {
 });
 
 // 🚀 START SECURE SERVER
-const server = app.listen(PORT, () => {
-    console.log('\n🎬 ===============================================');
-    console.log('🎬 MARKS FILM BACKEND - PRODUCTION READY');
-    console.log('🎬 ===============================================');
-    console.log(`🚀 Server running on port: ${PORT}`);
-    console.log(`📱 API Base URL: http://localhost:${PORT}`);
-    console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
-    console.log('🛡️ Security: FULLY ENABLED');
-    console.log('🔒 Rate Limiting: ACTIVE');
-    console.log('🛡️ Input Sanitization: ACTIVE');
-    console.log('🔐 Security Headers: ACTIVE');
-    console.log('� ReUquest Logging: ACTIVE');
-    console.log('🔥 Compression: ACTIVE');
-    console.log('🚫 CORS Protection: ACTIVE');
-    console.log('🛡️ XSS Protection: ACTIVE');
-    console.log('🔒 SQL Injection Protection: ACTIVE');
-    console.log('🎬 ===============================================');
-    console.log('✅ Ready to handle secure bookings and payments!');
-    console.log('🎬 ===============================================\n');
-});
+// For Vercel serverless deployment, don't start server
+if (process.env.NODE_ENV !== 'production') {
+    const server = app.listen(PORT, () => {
+        console.log('\n🎬 ===============================================');
+        console.log('🎬 MARKS FILM BACKEND - PRODUCTION READY');
+        console.log('🎬 ===============================================');
+        console.log(`🚀 Server running on port: ${PORT}`);
+        console.log(`� uAPI Base URL: http://localhost:${PORT}`);
+        console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
+        console.log('🛡️ Security: FULLY ENABLED');
+        console.log('🔒 Rate Limiting: ACTIVE');
+        console.log('🛡️ Input Sanitization: ACTIVE');
+        console.log('🔐 Security Headers: ACTIVE');
+        console.log('🔥 Compression: ACTIVE');
+        console.log('🚫 CORS Protection: ACTIVE');
+        console.log('🛡️ XSS Protection: ACTIVE');
+        console.log('🔒 SQL Injection Protection: ACTIVE');
+        console.log('🎬 ===============================================');
+        console.log('✅ Ready to handle secure bookings and payments!');
+        console.log('🎬 ===============================================\n');
+    });
+}
+
+// Export for Vercel serverless functions
+module.exports = app;
 
 // Graceful shutdown handling
 process.on('SIGTERM', () => {
