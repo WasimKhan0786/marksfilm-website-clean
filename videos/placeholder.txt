@@ -1,0 +1,26 @@
+# Video Files Placeholder
+
+Due to file size limitations, video files are not included in this repository.
+
+For production deployment, you can:
+
+1. Upload videos to a CDN service like:
+   - Cloudinary
+   - AWS S3
+   - Vercel Blob Storage
+   - YouTube (for public videos)
+
+2. Update the video paths in index.html to point to your CDN URLs
+
+3. Or use compressed versions of your videos (under 25MB each)
+
+Current video files referenced in the website:
+- suno.mp4
+- suno_1080p.mp4
+- engement_1080p.mp4
+- Untitled video - Made with Clipchamp_1080p.mp4
+- royal park_1080p.mp4
+- cinematic videography_1080p.mp4
+- wedding-shoot_1080p.mp4
+- mark film.mp4
+- wedding-shoot.mp4
