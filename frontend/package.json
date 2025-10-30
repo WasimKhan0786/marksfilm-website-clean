@@ -1,0 +1,19 @@
+{
+  "name": "marksfilm-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for MarksFilm - Professional Videography & Photography",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s . -l 3000",
+    "build": "echo 'Static site - no build needed'",
+    "dev": "live-server --port=3000"
+  },
+  "keywords": [
+    "videography",
+    "photography",
+    "wedding",
+    "frontend"
+  ],
+  "author": "MarksFilm",
+  "license": "MIT"
+}

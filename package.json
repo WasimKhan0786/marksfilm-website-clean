@@ -1,0 +1,39 @@
+{
+  "name": "marksfilm-complete-system",
+  "version": "2.0.0",
+  "description": "Complete Business Management System for MarksFilm - Professional Videography & Photography",
+  "main": "index.html",
+  "scripts": {
+    "start": "node start-server.js",
+    "backend": "cd backend && node server.js",
+    "init-db": "cd backend && node scripts/init-database.js",
+    "production": "cd backend && npm start"
+  },
+  "keywords": [
+    "videography",
+    "photography",
+    "wedding",
+    "business-management",
+    "crm",
+    "inventory",
+    "accounting",
+    "booking-system"
+  ],
+  "author": "MarksFilm",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marksfilm/complete-system"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "nodemailer": "^7.0.10",
+    "open": "^8.4.2",
+    "razorpay": "^2.9.6"
+  }
+}

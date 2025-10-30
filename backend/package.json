@@ -1,0 +1,49 @@
+{
+  "name": "marks-film-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Marks Film website - Professional videography and photography services",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "set NODE_ENV=development && nodemon server.js",
+    "start-linux": "NODE_ENV=production node server.js",
+    "dev-linux": "NODE_ENV=development nodemon server.js",
+    "init-db": "node scripts/init-database.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "security-check": "npm audit",
+    "production": "set NODE_ENV=production && pm2 start server.js --name marks-film-api",
+    "stop": "pm2 stop marks-film-api",
+    "restart": "pm2 restart marks-film-api",
+    "logs": "pm2 logs marks-film-api"
+  },
+  "keywords": [
+    "videography",
+    "photography",
+    "booking",
+    "api"
+  ],
+  "author": "Marks Film",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.1.0",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.3.0",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.0-rc.4",
+    "nodemailer": "^7.0.10",
+    "razorpay": "^2.9.6",
+    "resend": "^6.3.0",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
