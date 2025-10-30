@@ -3,6 +3,14 @@
         {
             "source": "/api/(.*)",
             "destination": "/api/index.js"
+        },
+        {
+            "source": "/",
+            "destination": "/index.html"
+        },
+        {
+            "source": "/booking",
+            "destination": "/booking.html"
         }
     ],
     "headers": [
