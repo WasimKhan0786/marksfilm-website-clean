@@ -43,11 +43,11 @@ app.use(compression);
 app.use(generalLimiter);
 
 // 5. CORS configuration (more secure)
-const allowedOrigins = process.env.ALLOWED_ORIGINS 
+const allowedOrigins = process.env.ALLOWED_ORIGINS
     ? process.env.ALLOWED_ORIGINS.split(',')
     : [
-        'http://localhost:3000', 
-        'http://127.0.0.1:3000', 
+        'http://localhost:3000',
+        'http://127.0.0.1:3000',
         'http://localhost:5500',
         'http://localhost:3001',
         'http://127.0.0.1:3001',
@@ -59,7 +59,7 @@ app.use(cors({
     origin: (origin, callback) => {
         // Allow requests with no origin (mobile apps, Postman, etc.)
         if (!origin) return callback(null, true);
-        
+
         if (allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
@@ -74,15 +74,15 @@ app.use(cors({
 }));
 
 // 6. Body parsing with security limits
-app.use(express.json({ 
+app.use(express.json({
     limit: '10mb',
     verify: (req, res, buf) => {
         // Store raw body for webhook verification
         req.rawBody = buf;
     }
 }));
-app.use(express.urlencoded({ 
-    extended: true, 
+app.use(express.urlencoded({
+    extended: true,
     limit: '10mb',
     parameterLimit: 20 // Limit number of parameters
 }));
@@ -204,7 +204,7 @@ app.use((err, req, res, next) => {
 
     // Security: Don't expose internal errors in production
     const isDevelopment = process.env.NODE_ENV === 'development';
-    
+
     // Handle specific error types
     if (err.name === 'ValidationError') {
         return res.status(400).json({
